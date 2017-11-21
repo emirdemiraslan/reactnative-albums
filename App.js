@@ -4,21 +4,21 @@
  * @flow
  */
 
-import React from "react";
-import {Text, View} from "react-native";
+import React from 'react';
+import { Text, View } from 'react-native';
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
-export default class App extends React.Component {
 
-  render(){
+const App = () => {
     return (
       <View>
-        <Text>Some Text</Text>
-        <Text>Some Text</Text>
-        <Text>Some Text</Text>
-        <Text>Some Text</Text>
-        <Text>Some Text</Text>
+        <Header title={'Albums'} />
+        <AlbumList title={'Album List'} />
       </View>
-
     );
-  }
-}
+};
+
+
+
+export default App;
