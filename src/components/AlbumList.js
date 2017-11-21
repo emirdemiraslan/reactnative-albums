@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Text, View, ActivityIndicator } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from "./AlbumDetail";
 
 class AlbumList extends Component {
 
@@ -14,8 +15,12 @@ class AlbumList extends Component {
 
   }
 
+  renderAlbums() {
+      return this.state.albums.map((album, i) => <AlbumDetail data={album} key={i}/> );
+  }
+
   render() {
-    if(this.state.albums.length==0){
+    if(this.state.albums.length<1){
       return (
         <View style={ style.loadingStyle }>
           <ActivityIndicator />
@@ -24,7 +29,11 @@ class AlbumList extends Component {
     }
     else
     {
-      return <Text>{this.props.title}</Text>
+      return (
+          <View>
+              {this.renderAlbums()}
+          </View>
+      );
     }
 
   }
