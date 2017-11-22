@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { Text, View, ActivityIndicator } from 'react-native';
+import { Text, ScrollView, View, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 import AlbumDetail from "./AlbumDetail";
 
@@ -30,9 +30,9 @@ class AlbumList extends Component {
     else
     {
       return (
-          <View>
+          <ScrollView>
               {this.renderAlbums()}
-          </View>
+          </ScrollView>
       );
     }
 
@@ -41,11 +41,10 @@ class AlbumList extends Component {
 
 const style={
   loadingStyle:{
-    flex:5,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height:'100%'
+    height: '90%'
   }
 }
 
